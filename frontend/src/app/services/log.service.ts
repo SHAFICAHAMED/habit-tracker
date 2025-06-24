@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class LogService {
 
-  private apiUrl='http://localhost:5000/api/logs'
+  private apiUrl='https://habit-tracker-vtdu.onrender.com/api/logs'
 
   constructor(private http:HttpClient) { }
 
