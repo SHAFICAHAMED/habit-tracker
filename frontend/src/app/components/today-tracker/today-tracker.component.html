@@ -1,0 +1,132 @@
+<!-- <div class="tracker-container">
+  <h2>Today's Habit Tracker</h2>
+
+  <div *ngFor="let habit of habits" class="habit-item">
+    <div class="habit-title">{{ habit.title }}</div>
+
+    <div class="buttons">
+      <button 
+        [class.active]="logs[habit._id!] === 'Complete'" 
+        (click)="markStatus(habit._id!, 'Complete')">
+        ✅ Done
+      </button>
+
+      <button 
+        [class.active]="logs[habit._id!] === 'NotComplete'" 
+        (click)="markStatus(habit._id!, 'NotComplete')">
+        ❌ Missed
+      </button>
+    </div>
+  </div>
+</div> -->
+
+<!-- 
+<div class="tracker-container">
+  <h2>📅 Today's Habit Tracker</h2>
+
+  <div *ngFor="let habit of habits" class="habit-item">
+    <div class="habit-title">{{ habit.title }}</div>
+
+    <div class="buttons">
+      <button 
+        [class.active]="logs[habit._id!] === 'Complete'" 
+        (click)="markStatus(habit._id!, 'Complete')">
+        ✅ Done
+      </button>
+
+      <button 
+        [class.active]="logs[habit._id!] === 'NotComplete'" 
+        (click)="markStatus(habit._id!, 'NotComplete')">
+        ❌ Missed
+      </button>
+    </div>
+  </div>
+
+  <div class="chart-container" *ngIf="completionData">
+    <ngx-charts-pie-chart
+  [view]="[400, 300]"
+  [results]="completionData"
+  [scheme]="colorScheme"
+  [legend]="true"
+  [labels]="true"
+  [doughnut]="true"
+  [gradient]="false">
+</ngx-charts-pie-chart>
+
+  </div>
+</div> -->
+
+
+<div class="tracker-container">
+  <h2>📅 Today's Habit Tracker</h2>
+
+  <div *ngFor="let habit of habits" class="habit-item">
+    <div class="habit-title">{{ habit.title }}</div>
+
+    <div class="buttons">
+      <button 
+        [class.active]="logs[habit._id!] === 'Complete'" 
+        (click)="markStatus(habit._id!, 'Complete')">
+        ✅ Done
+      </button>
+
+      <button 
+        [class.active]="logs[habit._id!] === 'NotComplete'" 
+        (click)="markStatus(habit._id!, 'NotComplete')">
+        ❌ Missed
+      </button>
+    </div>
+  </div>
+
+  <div class="progress-bar-container" *ngIf="completionRate >= 0">
+    <label>Overall Progress: {{ completionRate }}%</label>
+    <div class="progress-bar">
+      <div class="progress-fill" [style.width.%]="completionRate"></div>
+    </div>
+  </div>
+
+  <div class="chart-container" *ngIf="completionData">
+   <div class="chart-container" *ngIf="completionData">
+    <ngx-charts-pie-chart
+  [view]="[400, 300]"
+  [results]="completionData"
+  [scheme]="colorScheme"
+  [legend]="true"
+  [labels]="true"
+  [doughnut]="true"
+  [gradient]="false">
+</ngx-charts-pie-chart>
+  </div>
+
+  <button class="export-btn" (click)="exportToPDF()">📤 Export Report</button>
+</div>
+
+
+<!-- 
+<div class="day-strip">
+  <div *ngFor="let d of last7Days" class="day">
+    {{ d.day }}<br /><span>{{ d.date }}</span>
+  </div>
+</div>
+
+<div *ngFor="let habit of habits" class="habit-card" [style.--theme-color]="habit.color">
+  <div class="habit-header">
+    <div class="icon-circle">{{ habit.icon }}</div>
+    <div class="title-box">
+      <div class="title">{{ habit.title }}</div>
+      <div class="streak">Streak: {{ calculateStreak(habit._id) }} days</div>
+    </div>
+    <div class="icons">
+      <button (click)="addLog(habit._id)">➕</button>
+      <button (click)="markComplete(habit._id)">✅</button>
+    </div>
+  </div>
+
+  <div class="dot-grid">
+    <div 
+      class="dot" 
+      *ngFor="let day of last30Days" 
+      [class.filled]="isDayCompleted(habit._id, day)"
+    ></div>
+  </div>
+</div> -->

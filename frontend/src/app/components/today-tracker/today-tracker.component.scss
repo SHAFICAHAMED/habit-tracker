@@ -1,0 +1,296 @@
+.tracker-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: #1e1e2f;
+  border-radius: 16px;
+  box-shadow: 0 0 12px rgba(0, 255, 153, 0.1);
+  color: #ffffff;
+  font-family: 'Segoe UI', sans-serif;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #00ff99;
+    font-size: 1.6rem;
+  }
+
+  .habit-item {
+    background: #2a2a3b;
+    border-radius: 12px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 0 6px rgba(0, 255, 153, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    transition: background 0.3s;
+
+    &:hover {
+      background: #33334d;
+    }
+
+    .habit-title {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 0.75rem;
+
+      button {
+        padding: 0.5rem 1.2rem;
+        border-radius: 8px;
+        border: none;
+        font-weight: bold;
+        font-size: 0.95rem;
+        cursor: pointer;
+        transition: background 0.3s;
+        background-color: #444;
+        color: #fff;
+
+        &.active {
+          background-color: #00ff99;
+          color: #000;
+        }
+
+        &:hover {
+          background-color: #00cc7a;
+        }
+
+        &:nth-child(2).active {
+          background-color: #ff5f5f;
+          color: #000;
+        }
+
+        &:nth-child(2):hover {
+          background-color: #ff3333;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 500px) {
+    padding: 1rem;
+
+    .habit-item {
+      flex-direction: column;
+      align-items: flex-start;
+
+      .habit-title {
+        margin-bottom: 0.75rem;
+      }
+
+      .buttons {
+        width: 100%;
+        justify-content: space-between;
+
+        button {
+          flex: 1;
+        }
+      }
+    }
+  }
+}
+.tracker-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: #1e1e2f;
+  border-radius: 16px;
+  box-shadow: 0 0 12px rgba(0, 255, 153, 0.1);
+  color: #ffffff;
+  font-family: 'Segoe UI', sans-serif;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #00ff99;
+    font-size: 1.6rem;
+  }
+
+  .habit-item {
+    background: #2a2a3b;
+    border-radius: 12px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 0 6px rgba(0, 255, 153, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    transition: background 0.3s;
+    animation: fadeSlideIn 0.4s ease-out;
+
+    &:hover {
+      background: #33334d;
+    }
+
+    .habit-title {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 0.75rem;
+
+      button {
+        padding: 0.5rem 1.2rem;
+        border-radius: 8px;
+        border: none;
+        font-weight: bold;
+        font-size: 0.95rem;
+        cursor: pointer;
+        transition: background 0.3s;
+        background-color: #444;
+        color: #fff;
+
+        &.active {
+          background-color: #00ff99;
+          color: #000;
+        }
+
+        &:hover {
+          background-color: #00cc7a;
+        }
+
+        &:nth-child(2).active {
+          background-color: #ff5f5f;
+          color: #000;
+        }
+
+        &:nth-child(2):hover {
+          background-color: #ff3333;
+        }
+      }
+    }
+  }
+
+  @keyframes fadeSlideIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (max-width: 500px) {
+    padding: 1rem;
+
+    .habit-item {
+      flex-direction: column;
+      align-items: flex-start;
+
+      .habit-title {
+        margin-bottom: 0.75rem;
+      }
+
+      .buttons {
+        width: 100%;
+        justify-content: space-between;
+
+        button {
+          flex: 1;
+        }
+      }
+    }
+  }
+}.export-btn {
+    display: block;
+    margin: 1.5rem auto 0;
+    padding: 0.75rem 1.5rem;
+    background: #00ff99;
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+
+    &:hover {
+      background: #00cc7a;
+    }
+  }
+
+
+  .day-strip {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+  .day {
+    color: #fff;
+    font-size: 0.9rem;
+    text-align: center;
+    flex: 1;
+  }
+}
+
+.habit-card {
+  background: #111;
+  border-radius: 12px;
+  padding: 1rem;
+  margin: 1rem 0;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(255,255,255,0.05);
+  --theme-color: #ff0;
+
+  .habit-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .icon-circle {
+      background: var(--theme-color);
+      color: #000;
+      border-radius: 50%;
+      padding: 8px;
+      font-size: 1.2rem;
+    }
+    .title-box {
+      flex: 1;
+      margin-left: 10px;
+    }
+    .title {
+      font-size: 1.1rem;
+      font-weight: bold;
+    }
+    .streak {
+      font-size: 0.85rem;
+      color: #ccc;
+    }
+    .icons button {
+      background: none;
+      border: none;
+      font-size: 1.2rem;
+      color: #fff;
+      margin-left: 10px;
+    }
+  }
+
+  .dot-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(8px, 1fr));
+    gap: 4px;
+    margin-top: 10px;
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      background: #333;
+      border-radius: 50%;
+
+      &.filled {
+        background: var(--theme-color);
+      }
+    }
+  }
+}

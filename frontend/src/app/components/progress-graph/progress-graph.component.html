@@ -1,0 +1,51 @@
+<div class="graph-container">
+  <h2>Your Weekly Discipline Progress</h2>
+
+  <canvas baseChart
+    [data]="chartConfig.data"
+    [options]="chartConfig.options"
+    [type]="chartConfig.type">
+  </canvas>
+
+  <button class="export-btn" (click)="exportGraphToPDF()">📤 Export Chart</button>
+</div>
+<p class="average-label">
+  Weekly Average: <strong>{{ averageCompletion }}%</strong>
+</p>
+<div class="chart-toggle">
+  <label>Chart Type:</label>
+  <select [(ngModel)]="chartConfig.type">
+    <option value="bar">📊 Bar</option>
+    <option value="line">📈 Line</option>
+    <option value="radar">🕸️ Radar</option>
+  </select>
+</div>
+
+<div class="graph-container">
+  <h2>📊 Weekly Habit Progress</h2>
+
+  <canvas baseChart
+          [data]="chartConfig.data"
+          [options]="chartConfig.options"
+          [type]="chartConfig.type">
+  </canvas>
+
+  <div class="stats">
+    <p>📈 Average Completion: <strong>{{ averageCompletion }}%</strong></p>
+  </div>
+
+  <div class="streak-list">
+    <h3>🔥 Streaks Per Habit</h3>
+    <ul>
+      <li *ngFor="let s of habitStreaks">
+        🧩 Habit ID: <code>{{ s.habitId }}</code> |
+        🔥 Current: <strong>{{ s.currentStreak }}</strong> days |
+        🏆 Best: <strong>{{ s.bestStreak }}</strong> days
+      </li>
+    </ul>
+  </div>
+
+  <button (click)="exportGraphToPDF()">📤 Export as PDF</button>
+</div>
+
+

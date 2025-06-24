@@ -1,0 +1,50 @@
+<!-- <div class="habit-form-container">
+  <h2>Add a New Habit</h2>
+  <form (submit)="addHabit(); $event.preventDefault()">
+    <input type="text" [(ngModel)]="newHabit.title" name="title" placeholder="Habit title" required />
+    <select [(ngModel)]="newHabit.goal" name="goal">
+      <option value="daily">Daily</option>
+      <option value="weekly">Weekly</option>
+    </select>
+    <button type="submit">Add Habit</button>
+  </form>
+
+  <hr />
+
+  <h3>All Habits</h3>
+  <ul>
+    <li *ngFor="let habit of habits">
+      {{ habit.title }} ({{ habit.goal }})
+      <button (click)="deleteHabit(habit._id!)">❌</button>
+    </li>
+  </ul>
+</div> -->
+
+
+<button class="open-modal-btn" (click)="showModal = true">➕ Add Habit</button>
+
+<div class="modal-backdrop" *ngIf="showModal" (click)="closeModal()"></div>
+
+<div class="modal" *ngIf="showModal" [@fadeInSlide]>
+  <div class="modal-header">
+    <h2>📝 Add a New Habit</h2>
+    <button class="close-btn" (click)="closeModal()">✖</button>
+  </div>
+
+  <form (submit)="addHabit(); $event.preventDefault()">
+    <div class="form-group">
+      <span class="icon">📌</span>
+      <input type="text" [(ngModel)]="newHabit.title" name="title" placeholder="Habit title" required />
+    </div>
+
+    <div class="form-group">
+      <span class="icon">📆</span>
+      <select [(ngModel)]="newHabit.goal" name="goal">
+        <option value="daily">Daily</option>
+        <option value="weekly">Weekly</option>
+      </select>
+    </div>
+
+    <button type="submit">Add Habit</button>
+  </form>
+</div>
